@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Welcome to daSHBOARD</h1>
-</body>
+    <button onclick="Logout()">Logout</button>
+
+    <script>
+      function Logout() {
+        localStorage.setItem("LOGINUSER", false);
+        window.location.href = "./login.html";
+      }
+      function RedirectSMIT() {
+        var userLoginStatus = localStorage.getItem("LOGINUSER");
+        if (userLoginStatus == "false") {
+          window.location.href = "./login.html";
+        }
+      }
+
+      RedirectSMIT();
+    </script>
+  </body>
 </html>

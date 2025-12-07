@@ -51,3 +51,15 @@ function signUp() {
 }
 
 
+function setRedirect(){
+  var userLoginStatus=localStorage.getItem("LOGINUSER")
+  if(userLoginStatus=="true"){
+    window.location.href="./dashboard.html"
+    
+  }
+
+}
+
+setRedirect()
+
+

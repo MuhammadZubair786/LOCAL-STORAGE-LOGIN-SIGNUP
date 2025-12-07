@@ -38,6 +38,7 @@ function Login() {
     if (userExit == true) {
       if (userObj[selectedIndex]["password"] == password) {
         alert("login success fully");
+        localStorage.setItem("LOGINUSER",true)
         window.location.href = "./dashboard.html";
       } else {
         alert("invalid password");
@@ -47,3 +48,15 @@ function Login() {
     }
   }
 }
+
+
+function RedirectSMIT(){
+  var userLoginStatus=localStorage.getItem("LOGINUSER")
+  if(userLoginStatus=="true"){
+    window.location.href="./dashboard.html"
+    
+  }
+
+}
+
+RedirectSMIT()
